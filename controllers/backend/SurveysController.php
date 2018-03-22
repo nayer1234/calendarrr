@@ -1,12 +1,12 @@
 <?php
 
-namespace kouosl\sample\controllers\backend;
+namespace kouosl\survey\controllers\backend;
 
-use kouosl\sample\models\SampleData;
-use kouosl\sample\models\UploadImage;
+use kouosl\survey\models\SampleData;
+use kouosl\survey\models\UploadImage;
 use Yii;
-use kouosl\sample\models\Samples;
-use kouosl\sample\models\SamplesSearch;
+use kouosl\survey\models\Samples;
+use kouosl\survey\models\SamplesSearch;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UnauthorizedHttpException;
@@ -14,9 +14,9 @@ use yii\web\Session;
 use yii\web\UploadedFile;
 use yii\filters\AccessControl;
 /**
- * SamplesController implements the CRUD actions for Sample model.
+ * SamplesController implements the CRUD actions for Survey model.
  */
-class SamplesController extends DefaultController
+class SurveysController extends DefaultController
 {
     public function behaviors()
     {
@@ -60,7 +60,7 @@ class SamplesController extends DefaultController
     	
 
     	
-        $searchModel = new SamplesSearch();
+        $searchModel = new SurveysSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('_manage', [
@@ -70,7 +70,7 @@ class SamplesController extends DefaultController
     }
 
     /**
-     * Displays a single Sample model.
+     * Displays a single Survey model.
      * @param integer $id
      * @return mixed
      */
@@ -84,7 +84,7 @@ class SamplesController extends DefaultController
     }
 
     /**
-     * Creates a new Sample model.
+     * Creates a new Survey model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
@@ -92,7 +92,7 @@ class SamplesController extends DefaultController
     {
 
     	
-        $model = new Samples();
+        $model = new Surveys();
 
         $uploadImage = new UploadImage();
 
@@ -104,7 +104,7 @@ class SamplesController extends DefaultController
 
             if(!$model->save()){
 
-                yii::$app->session->setFlash('flashMessage', ['type' => 'error', 'message' => Module::t('sample', 'Sample Not Saved' )]);
+                yii::$app->session->setFlash('flashMessage', ['type' => 'error', 'message' => Module::t('survey', 'Survey Not Saved' )]);
 
                 return $this->render('_create', ['model' => $model]); // error
             }
@@ -145,7 +145,7 @@ class SamplesController extends DefaultController
 
             if(!$model->save()){
 
-                yii::$app->session->setFlash('flashMessage', ['type' => 'error', 'message' => Module::t('sample', 'Sample Not Saved' )]);
+                yii::$app->session->setFlash('flashMessage', ['type' => 'error', 'message' => Module::t('survey', 'Survey Not Saved' )]);
 
                 return $this->render('_update', ['model' => $model]); // error
             }
@@ -170,7 +170,7 @@ class SamplesController extends DefaultController
     public function actionDelete($id)
     {
 
-        SampleData::deleteAll(['sample_id' => $id]);
+        SurveyData::deleteAll(['survey_id' => $id]);
 
         $model = $this->findModel($id);
 
@@ -193,7 +193,7 @@ class SamplesController extends DefaultController
      */
     protected function findModel($id)
     {
-        if (($model = Samples::findOne($id)) !== null) {
+        if (($model = Surveys::findOne($id)) !== null) {
 
             return $model;
 

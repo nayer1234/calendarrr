@@ -1,6 +1,6 @@
 <?php
 
-namespace kouosl\sample\models;
+namespace kouosl\survey\models;
 
 use Yii;
 
@@ -13,14 +13,14 @@ use Yii;
  *
  * @property Samples $sample
  */
-class SampleData extends \yii\db\ActiveRecord
+class SurveyData extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'sample_data';
+        return 'survey_data';
     }
 
     /**
@@ -32,7 +32,7 @@ class SampleData extends \yii\db\ActiveRecord
             [['name', 'sample_id'], 'required'],
             [['sample_id'], 'integer'],
             [['name'], 'string', 'max' => 255],
-            [['sample_id'], 'exist', 'skipOnError' => true, 'targetClass' => Samples::className(), 'targetAttribute' => ['sample_id' => 'id']],
+            [['survey_id'], 'exist', 'skipOnError' => true, 'targetClass' => Surveys::className(), 'targetAttribute' => ['survey_id' => 'id']],
         ];
     }
 
@@ -44,15 +44,15 @@ class SampleData extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
-            'sample_id' => 'Sample ID',
+            'survey_id' => 'Survey ID',
         ];
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getSample()
+    public function getSurvey()
     {
-        return $this->hasOne(Samples::className(), ['id' => 'sample_id']);
+        return $this->hasOne(Surveys::className(), ['id' => 'survey_id']);
     }
 }
