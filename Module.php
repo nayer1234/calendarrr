@@ -1,6 +1,6 @@
 <?php
 
-namespace kouosl\survey;
+namespace kouosl\calendarrr;
 use Yii;
 use yii\filters\auth\CompositeAuth;
 use yii\filters\auth\HttpBasicAuth;
@@ -57,16 +57,16 @@ class Module extends \kouosl\base\Module
         Yii::$app->i18n->translations['site/*'] = [
             'class' => 'yii\i18n\PhpMessageSource',
             'sourceLanguage' => 'en-US',
-            'basePath' => '@kouosl/survey/messages',
+            'basePath' => '@kouosl/calendarrr/messages',
             'fileMap' => [
-                'survey/survey' => 'survey.php',
+                'calendarrr/calendarrr' => 'calendarrr.php',
             ],
         ];
     }
 
     public static function t($category, $message, $params = [], $language = null)
     {
-        return Yii::t('survey/' . $category, $message, $params, $language);
+        return Yii::t('calendarrr/' . $category, $message, $params, $language);
     }
 
     public static function initRules(){
@@ -75,7 +75,7 @@ class Module extends \kouosl\base\Module
             [
                 'class' => 'yii\rest\UrlRule',
                 'controller' => [
-                    'survey/surveys',
+                    'calendarrr/calendarrr',
                 ],
                 'tokens' => [
                     '{id}' => '<id:\\w+>'
