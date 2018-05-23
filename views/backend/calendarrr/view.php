@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model kouosl\calendarrr\models\Calendarrr */
 
-$this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Calendarrr', 'url' => ['index']];
+$this->title = $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Calendarrrs', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="calendarrr-view">
@@ -29,10 +29,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'title',
-            'content:ntext',
-            'question:ntext',
-            'answer:ntext',
+            'day',
+            'month',
         ],
     ]) ?>
 

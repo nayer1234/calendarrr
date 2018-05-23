@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model kouosl\calendarrr\models\Calendarrr */
 
 $this->title = 'Create Calendarrr';
-$this->params['breadcrumbs'][] = ['label' => 'Calendarrr', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Calendarrrs', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="calendarrr-create">

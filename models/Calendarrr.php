@@ -8,15 +8,13 @@ use Yii;
  * This is the model class for table "calendarrr".
  *
  * @property int $id
- * @property string $title
- * @property string $content
- * @property string $question
- * @property string $answer
+ * @property string $day
+ * @property string $month
  */
 class Calendarrr extends \yii\db\ActiveRecord
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public static function tableName()
     {
@@ -24,28 +22,26 @@ class Calendarrr extends \yii\db\ActiveRecord
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function rules()
     {
         return [
-            [['title'], 'required'],
-            [['content', 'question', 'answer'], 'string'],
-            [['title'], 'string', 'max' => 255],
+            [['id', 'day', 'month'], 'required'],
+            [['id'], 'integer'],
+            [['day', 'month'], 'safe'],
         ];
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function attributeLabels()
     {
         return [
             'id' => 'ID',
-            'title' => 'Title',
-            'content' => 'Content',
-            'question' => 'Question',
-            'answer' => 'Answer',
+            'day' => 'Day',
+            'month' => 'Month',
         ];
     }
 }

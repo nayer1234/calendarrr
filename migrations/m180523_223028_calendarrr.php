@@ -4,9 +4,9 @@ use yii\db\Schema;
 use yii\db\Migration;
 
 /**
- * Class m180501_211845_calendarrr
+ * Class m180523_223028_calendarrr
  */
-class m180501_211845_calendarrr extends Migration
+class m180523_223028_calendarrr extends Migration
 {
     /**
      * {@inheritdoc}
@@ -15,10 +15,8 @@ class m180501_211845_calendarrr extends Migration
     {
 	$this->createTable('calendarrr', array(
             'id' => 'pk',
-            'title' => 'string NOT NULL',
-            'content' => 'text',
-			'question' => 'text',
-			'answer' => 'text',
+			'day' => 'DATE',
+            'month' => 'DATETIME',
         ));
     }
 
@@ -39,7 +37,7 @@ class m180501_211845_calendarrr extends Migration
 
     public function down()
     {
-        echo "m180501_211845_calendarrr cannot be reverted.\n";
+        echo "m180523_223028_calendarrr cannot be reverted.\n";
 
         return false;
     }

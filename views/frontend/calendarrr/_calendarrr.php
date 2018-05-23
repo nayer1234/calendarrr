@@ -18,10 +18,8 @@ $data['title'] = $this->title;
 			'dataProvider' =>$dataProvider,
 			'columns' =>[
 			'id',
-			'title',
-			'content',
-			'question',
-			'answer',
+			'day',
+			'month',
 ]
 ]);
 ?>

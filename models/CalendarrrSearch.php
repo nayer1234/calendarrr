@@ -13,18 +13,18 @@ use kouosl\calendarrr\models\Calendarrr;
 class CalendarrrSearch extends Calendarrr
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function rules()
     {
         return [
             [['id'], 'integer'],
-            [['title', 'content', 'question', 'answer'], 'safe'],
+            [['day', 'month'], 'safe'],
         ];
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function scenarios()
     {
@@ -60,12 +60,9 @@ class CalendarrrSearch extends Calendarrr
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'day' => $this->day,
+            'month' => $this->month,
         ]);
-
-        $query->andFilterWhere(['like', 'title', $this->title])
-            ->andFilterWhere(['like', 'content', $this->content])
-            ->andFilterWhere(['like', 'question', $this->question])
-            ->andFilterWhere(['like', 'answer', $this->answer]);
 
         return $dataProvider;
     }

@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel kouosl\calendarrr\models\CalendarrrSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Calendarrr';
+$this->title = 'Calendarrrs';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="calendarrr-index">

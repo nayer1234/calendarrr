@@ -5,9 +5,9 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model kouosl\calendarrr\models\Calendarrr */
 
-$this->title = 'Update Calendarrr: {nameAttribute}';
-$this->params['breadcrumbs'][] = ['label' => 'Calendarrr', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];
+$this->title = 'Update Calendarrr: ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Calendarrrs', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="calendarrr-update">

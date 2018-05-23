@@ -17,13 +17,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'title') ?>
+    <?= $form->field($model, 'day') ?>
 
-    <?= $form->field($model, 'content') ?>
-
-    <?= $form->field($model, 'question') ?>
-
-    <?= $form->field($model, 'answer') ?>
+    <?= $form->field($model, 'month') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

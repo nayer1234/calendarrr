@@ -8,17 +8,15 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="Calendarrr-form">
+<div class="calendarrr-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'id')->textInput() ?>
 
-    <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'day')->textInput() ?>
 
-    <?= $form->field($model, 'question')->textarea(['rows' => 6]) ?>
-
-    <?= $form->field($model, 'answer')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'month')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
